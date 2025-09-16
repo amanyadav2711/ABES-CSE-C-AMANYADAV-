@@ -1,0 +1,136 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top Navigation Bar */
+.topnav {
+    width: 100%;
+    background-color: #004d80;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.topnav button,
+.topnav a {
+    background: #ff6600;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.topnav button:hover,
+.topnav a:hover {
+    background: #e65c00;
+}
+
+.topnav p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Container Box */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 40px;
+    width: 80%;
+}
+
+/* Form Box */
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    width: 350px;
+}
+
+.box p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #004d80;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form select:focus {
+    border: 1px solid #004d80;
+    box-shadow: 0px 0px 5px #004d80;
+}
+
+form input[type="radio"] {
+    margin-right: 6px;
+}
+
+/* Button Styling */
+#seat-book {
+    width: 100%;
+    padding: 12px;
+    background: #004d80;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#seat-book:hover {
+    background: #003355;
+}
+
+/* Bus Image */
+.bus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bus img {
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}

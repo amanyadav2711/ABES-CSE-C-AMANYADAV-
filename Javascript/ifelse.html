@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <script>
+        var x=10;
+        var y=40;
+        var z=30;
+        // second largest number 
+        if(x>y && x>z){
+            if(y>z){
+                document.write("second largest number is "+y);
+            }
+            else{
+                document.write("second largest number is "+z);
+            }
+        }
+        else if(y>x && y>z){
+            if(x>z){
+                document.write("second largest number is "+x);
+            }
+            else{
+                document.write("second largest number is "+z);
+            }
+        }
+        else{
+            if(x>y){
+                document.write("second largest number is "+x);
+            }
+            else{
+                document.write("second largest number is "+y);
+            }
+        }
+       
+    </script>
+</body>
+</html>
