@@ -6,8 +6,13 @@
 <body>
     <p id="adi"></p>
     <script>
-        let hello =function(){
-            return "Hello World";
+        // let hello =function(){ (normal function)
+        //     return "Hello World";
+        // }
+        // document.getElementById("adi").innerHTML=hello();
+     
+        let hello =()=>{ //(arrow function)
+            return "Hello World from Arrow Function";
         }
         document.getElementById("adi").innerHTML=hello();
 
