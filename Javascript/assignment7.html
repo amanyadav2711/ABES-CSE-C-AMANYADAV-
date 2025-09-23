@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .main-container {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(201, 201, 201);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(53, 53, 63);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .container img {
+            width: 150px;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .container a {
+            text-decoration: none;
+        }
+
+        .container button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color: rgb(70, 70, 70);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/REF-REF-2658350-bento-apple-sv_DER-4df4ae4c-6322-42ae-ab25-11f1e3ef81ff.jpg?format=webp;maxWidth=1400;maxHeight=996" alt="Phone">
+            <h1>Phone</h1>
+            <a href="assignment7a.html">
+                <button>View More</button>
+            </a>
+        </div>
+        <div class="container">
+            <img src="https://m.media-amazon.com/images/I/51lYbJhOmbL._UF1000,1000_QL80_.jpg" alt="TV">
+            <h1>TV</h1>
+            <a href="tv.html">
+                <button>View More</button>
+            </a>
+        </div>
+        <div class="container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9YV1-qfGlujkHPBuT-r8cGSxfi_RIJe8kHg&s" alt="Laptop">
+            <h1>Laptop</h1>
+            <a href="laptop.html">
+                <button>View More</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const Phone = {
+            brand: "Samsung",
+            price: 30000,
+            color: "Black"
+        };
+
+        const TV = {
+            brand: "LG",
+            price: 40000,
+            color: "White"
+        };
+
+        const Laptop = {
+            brand: "Dell",
+            price: 50000,
+            color: "Grey"
+        };
+
+        console.log(Phone, TV, Laptop);
+    </script>
+</body>
+
+</html>

@@ -8,20 +8,29 @@
             font-size: 20px;
             font-weight: bold;
             background-color: blue;
+            
         }
-          .adi{
+          .adi1{
             width: 500px;
             height: 500px;
             font-size: 20px;
             font-weight: bold;
-            background-color: rgb(215, 215, 221);
+            background-color: rgb(141, 141, 229);
+            
+        }
+        div{
+            margin: auto;
+            display: flex;
+
+            
+            
         }
         </style>
 
 </head>
 <body>
     
-    
+    <div class="adi2">
     <div class="adi" height="40px" width="300px">
         matched student details are:<br>
 
@@ -51,18 +60,13 @@
             rollno:24,
             class:"DS"
         }
-              if(student1.class=="IT"){
-            document.write("Name: "+student1.name+" Rollno: "+student1.rollno+" Class: "+student1.class +"<br>");
-          }  if(student2.class=="IT"){
-            document.write("Name: "+student2.name+" Rollno: "+student2.rollno+" Class: "+student2.class +"<br>");
-          }
-            if(student3.class=="IT"){
-                document.write("Name: "+student3.name+" Rollno: "+student3.rollno+" Class: "+student3.class +"<br>");
-            }  if(student4.class=="IT"){
-                document.write("Name: "+student4.name+" Rollno: "+student4.rollno+" Class: "+student4.class +"<br>");
-            }  if(student5.class=="IT"){
-                document.write("Name: "+student5.name+" Rollno: "+student5.rollno+" Class: "+student5.class +"<br>");
+          var students=[student1,student2,student3,student4,student5];
+          for(i=0;i<students.length;i++){
+            if(students[i].class=="IT"){
+                document.write("Name: "+students[i].name+" Rollno: "+students[i].rollno+" Class: "+students[i].class +"<br>");
             }
+            
+          }
 
           </script>
 
@@ -71,22 +75,17 @@
         Unmatched student details are:<br>
      <script>
         
-    
-              if(student1.class=="IT"){
-            document.write("Name: "+student1.name+" Rollno: "+student1.rollno+" Class: "+student1.class +"<br>");
-          }  if(student2.class=="IT"){
-            document.write("Name: "+student2.name+" Rollno: "+student2.rollno+" Class: "+student2.class +"<br>");
-          }
-            if(student3.class=="IT"){
-                document.write("Name: "+student3.name+" Rollno: "+student3.rollno+" Class: "+student3.class +"<br>");
-            }  if(student4.class=="IT"){
-                document.write("Name: "+student4.name+" Rollno: "+student4.rollno+" Class: "+student4.class +"<br>");
-            }  if(student5.class=="IT"){
-                document.write("Name: "+student5.name+" Rollno: "+student5.rollno+" Class: "+student5.class +"<br>");
+            for(i=0;i<students.length;i++){
+                if(students[i].class!="IT"){
+                    document.write("Name: "+students[i].name+" Rollno: "+students[i].rollno+" Class: "+students[i].class +"<br>");
+                }
+                
             }
 
           </script>
           </div>
+          /
+    </div>
 
 
     
