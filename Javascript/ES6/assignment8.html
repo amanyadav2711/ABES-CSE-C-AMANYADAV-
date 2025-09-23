@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .main {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .img {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .img img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+
+        .name, .known {
+            margin-bottom: 20px;
+        }
+
+        .name h3, .name h4, .known h2 {
+            margin: 10px 0;
+        }
+
+        .name input, .known input {
+            margin: 5px 0;
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .known input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="img">
+            <img src="https://play-lh.googleusercontent.com/LTFZdtNXaVlhPpIq0lK26sMeYVFV9xm4WA89dMX3_pwsg2sE5dgefyQNbFLUwDKX9PS2" alt="Logo">
+        </div>
+        <div class="name">
+            <h3>YOUR NAME</h3>
+            <input type="text" placeholder="Enter your name" id="nameInput">
+            <h4>BTECH</h4>
+        </div>
+        <div class="known">
+            <h2>KNOW LANGUAGES</h2>
+            <label><input type="checkbox" id="javascript" name="languages"> JavaScript</label><br>
+            <label><input type="checkbox" id="cpp" name="languages"> C++</label><br>
+            <label><input type="checkbox" id="java" name="languages"> Java</label><br>
+            <label><input type="checkbox" id="python" name="languages"> Python</label><br>
+        </div>
+        <button onclick="buildResume()">Build Resume</button>
+
+        <div class="output" id="resumeOutput">
+            
+        </div>
+    </div>
+
+    <script>
+        function buildResume() {
+        
+            const name = document.getElementById("nameInput").value;
+
+            
+            const languages = [];
+            if (document.getElementById("javascript").checked) languages.push("JavaScript");
+            if (document.getElementById("cpp").checked) languages.push("C++");
+            if (document.getElementById("java").checked) languages.push("Java");
+            if (document.getElementById("python").checked) languages.push("Python");
+
+        
+            const output = document.getElementById("resumeOutput");
+            output.innerHTML = `
+                <h3>Resume</h3>
+                <p><strong>Name:</strong> ${name || "Not provided"}</p>
+                <p><strong>Known Languages:</strong> ${languages.length > 0 ? languages.join(", ") : "None selected"}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
