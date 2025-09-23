@@ -6,15 +6,17 @@
 <body>
     <p id="adi"></p>
     <script>
-        // let hello =function(){ (normal function)
-        //     return "Hello World";
-        // }
-        // document.getElementById("adi").innerHTML=hello();
+        let hello1 =function(){ //(normal function)
+            return "Hello World";
+        }
+        document.getElementById("adi").innerHTML=hello1();
      
-        let hello =()=>{ //(arrow function)
+        let hello2 =()=>{ //(arrow function)
             return "Hello World from Arrow Function";
         }
-        document.getElementById("adi").innerHTML=hello();
+        document.getElementById("adi").innerHTML=hello2();
+        let hello3 =()=> "Hello World from Arrow Function without return keyword";
+        document.getElementById("adi").innerHTML=hello3();
 
     </script>
     
