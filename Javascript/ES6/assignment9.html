@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .main {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+        .sectionmarket{
+            display: none;
+
+        }
+        
+
+        .section input {
+            border-radius: 20px;
+            padding: 8px;
+            width: calc(100% - 100px);
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .section button {
+            padding: 10px 20px;
+            background-color: #121314;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .section button:hover {
+            background-color: #d4d7db;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .output ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .output ul li {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>TO DO LIST</h1>
+
+        <div class="section play">
+            <h3>Play</h3>
+            <input type="text" id="playInput" placeholder="Enter a play task">
+            <button onclick="addTask('play')">+</button>
+            <ul id="playList"></ul>
+        </div>
+
+        <div class="section market">
+            <h3>Go to Market</h3>
+            <input type="text" id="marketInput" placeholder="Enter a market task">
+            <button onclick="addTask('market')">+</button>
+            <ul id="marketList"></ul>
+        </div>
+
+        <div class="section college">
+            <h3>Go to College</h3>
+            <input type="text" id="collegeInput" placeholder="Enter a college task">
+            <button onclick="addTask('college')">+</button>
+            <ul id="collegeList"></ul>
+        </div>
+
+        <div class="section">
+            <button onclick="listAllTasks()">LIST OF ALL</button>
+        </div>
+
+        <div class="output" id="allTasksOutput">
+        
+        </div>
+    </div>
+
+    <script>
+        
+        const tasks = {
+            play: [],
+            market: [],
+            college: []
+        };
+
+
+        function addTask(category) {
+            const inputId = `${category}Input`;
+            const listId = `${category}List`;
+
+
+            const task = document.getElementById(inputId).value.trim();
+
+            if (task) {
+                
+                tasks[category].push(task);
+
+        
+                const list = document.getElementById(listId);
+                const listItem = document.createElement("li");
+                listItem.textContent = task;
+                list.appendChild(listItem);
+
+            
+                document.getElementById(inputId).value = "";
+            } else {
+                alert("Please enter a task!");
+            }
+        }
+
+    
+        function listAllTasks() {
+            const output = document.getElementById("allTasksOutput");
+            output.innerHTML = "<h3>All Tasks</h3>";
+
+            const allTasks = [...tasks.play, ...tasks.market, ...tasks.college];
+
+            if (allTasks.length > 0) {
+                const ul = document.createElement("ul");
+                allTasks.forEach(task => {
+                    const li = document.createElement("li");
+                    li.textContent = task;
+                    ul.appendChild(li);
+                });
+                output.appendChild(ul);
+            } else {
+                output.innerHTML += "<p>No tasks added yet.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
